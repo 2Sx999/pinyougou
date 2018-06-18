@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -14,5 +14,12 @@
     <dubbo:application name="pinyougou-manager-web" />
     <dubbo:registry address="zookeeper://192.168.193.128:2181"/>
     <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.BrandService" id="brandService"/>
-
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.GoodsDescService" id="goodsDescService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.GoodsService" id="goodsService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.ItemCatService" id="itemCatService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.ItemService" id="itemService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.SellerService" id="sellerService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.SpecificationOptionService" id="specificationOptionService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.SpecificationService" id="specificationService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.TypeTemplateService" id="typeTemplateService" />
 </beans>

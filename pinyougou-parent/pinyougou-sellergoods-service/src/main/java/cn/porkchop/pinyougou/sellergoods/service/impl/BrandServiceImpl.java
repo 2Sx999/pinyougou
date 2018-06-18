@@ -1,6 +1,7 @@
 package cn.porkchop.pinyougou.sellergoods.service.impl;
 
 import cn.porkchop.pinyougou.mapper.TbBrandMapper;
+import cn.porkchop.pinyougou.mapper.group.BrandMapper;
 import cn.porkchop.pinyougou.pojo.PageResult;
 import cn.porkchop.pinyougou.pojo.TbBrand;
 import cn.porkchop.pinyougou.pojo.TbBrandExample;
@@ -11,11 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BrandServiceImpl implements BrandService {
     @Autowired
     private TbBrandMapper tbBrandMapper;
+    @Autowired
+    private BrandMapper brandMapper;
 
 
     @Override
@@ -71,5 +75,11 @@ public class BrandServiceImpl implements BrandService {
         for (long id : ids) {
             tbBrandMapper.deleteByPrimaryKey(id);
         }
+    }
+
+
+    @Override
+    public List<Map<String, String>> findAllForSelect2() {
+        return brandMapper.findAllForSelect2();
     }
 }

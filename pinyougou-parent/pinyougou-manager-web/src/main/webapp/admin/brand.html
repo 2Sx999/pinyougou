@@ -17,82 +17,12 @@
     <link rel="stylesheet" href="../plugins/angularjs/pagination.css">
     <!-- 分页组件结束 -->
 
-    <script>
-        var app = angular.module("pinyougou", ["pagination"]);
-        app.controller("brandController", function ($scope, $http) {
-            $scope.findAll = function () {
-                $http.get("../brand/findAll.php").success(function (response) {
-                    $scope.list = response;
-                });
-            }
-            //重新加载列表
-            $scope.reloadList = function () {
-                $scope.findWithConditionsByPagination($scope.paginationConf.currentPage, $scope.paginationConf.itemsPerPage);
-            }
-            //分页控件配置
-            $scope.paginationConf = {
-                currentPage: 1,
-                totalItems: 10,
-                itemsPerPage: 20,
-                perPageOptions: [10, 20, 30, 40, 50],
-                onChange: function () {//页面加载时也会触发
-                    $scope.reloadList();//重新加载
-                }
-            }
-            //分页
-            $scope.findByPagination = function (page, rows) {
-                $http.get("../brand/findByPagination.php?page=" + page + "&rows=" + rows).success(function (response) {
-                    $scope.list = response.rows;
-                    $scope.paginationConf.totalItems = response.total;
-                });
-            }
-            $scope.searchEntity={};
-            $scope.findWithConditionsByPagination = function (page, rows) {
-                $http.post("../brand/findWithConditionsByPagination.php?page=" + page + "&rows=" + rows,$scope.searchEntity).success(function (response) {
-                    $scope.list = response.rows;
-                    $scope.paginationConf.totalItems = response.total;
-                });
-            }
-            //保存
-            $scope.save = function () {
-                var methodName = $scope.entity.id == null ? "add" : "update";
-                $http.post("../brand/" + methodName + ".php", $scope.entity).success(function (response) {
-                    if (response.success === true) {
-                        $scope.reloadList();
-                    } else {
-                        alert(response.message);
-                    }
-                });
-            }
-            //回显要修改的数据
-            $scope.findOne = function (id) {
-                $http.get("../brand/findById.php?id=" + id).success(function (response) {
-                    $scope.entity = response;
-                });
-            }
-            //批量删除
-            $scope.selectIds = [];
-            $scope.updateSelectionIds = function ($event, id) {
-                if ($event.target.checked) {
-                    $scope.selectIds.push(id);
-                } else {
-                    var index = $scope.selectIds.indexOf(id);
-                    $scope.selectIds.splice(index, 1);
-                }
-            }
-            $scope.delete = function () {
-                $http.get("../brand/delete.php?ids=" + $scope.selectIds).success(function (response) {
-                    if (response.success === true) {
-                        $scope.reloadList();
-                        $scope.selectIds.splice(0, $scope.selectIds.length);
-                    } else {
-                        alert(response.message);
-                    }
-                });
-            }
-        });
+    <script src="../js/base_pagination.js"></script>
+    <script src="../js/service/brandService.js"></script>
+    <script src="../js/controller/baseController.js"></script>
+    <script src="../js/controller/brandController.js"></script>
 
-    </script>
+
 </head>
 <body class="hold-transition skin-red sidebar-mini" ng-app="pinyougou" ng-controller="brandController"
 >
@@ -151,7 +81,7 @@
                 <td>{{entity.firstChar}}</td>
                 <td class="text-center">
                     <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal"
-                            ng-click="findOne(entity.id)">修改
+                            ng-click="findById(entity.id)">修改
                     </button>
                 </td>
             </tr>

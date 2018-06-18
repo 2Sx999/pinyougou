@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/brand")
@@ -108,5 +109,15 @@ public class BrandController {
         } catch (Exception e) {
             return new Result(false, "删除失败");
         }
+    }
+    /**
+     * 获取所有品牌
+     *
+     * @date 2018/6/17 22:43
+     * @author porkchop
+     */
+    @RequestMapping("/findAllForSelect2")
+    public List<Map<String,String>> findAllForSelect2(){
+        return brandService.findAllForSelect2();
     }
 }

@@ -31,6 +31,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
-        <url-pattern>*.do</url-pattern>
+        <url-pattern>*.php</url-pattern>
     </servlet-mapping>
 </web-app>
