@@ -118,4 +118,21 @@ public class SellerController {
         return sellerService.findWithConditionsByPagination(seller, page, rows);
     }
 
+    /**
+     * 更改审核的状态
+     *
+     * @date 2018/6/23 13:19
+     * @author porkchop
+     */
+    @RequestMapping("/updateStatus")
+    public Result updateStatus(String sellerId, String status) {
+        try {
+            sellerService.updateStatus(sellerId, status);
+            return new Result(true, "成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "失败");
+        }
+
+    }
 }

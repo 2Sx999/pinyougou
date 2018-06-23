@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -9,8 +9,33 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <mvc:annotation-driven/>
 
-    <context:component-scan base-package="cn.porkchop.pinyougou" />
+    <context:component-scan base-package="cn.porkchop.pinyougou.shop.controller" />
     <!-- 引用dubbo 服务 -->
     <dubbo:application name="pinyougou-manager-web" />
     <dubbo:registry address="zookeeper://192.168.193.128:2181"/>
+
+
+
+
+
+
+
+
+
+
+
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.BrandService" id="brandService"/>
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.AddressService" id="addressService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.AreasService" id="areasService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.CitiesService" id="citiesService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.ContentCategoryService" id="contentCategoryService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.ContentService" id="contentService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.FreightTemplateService" id="freightTemplateService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.OrderItemService" id="orderItemService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.OrderService" id="orderService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.PayLogService" id="payLogService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.ProvincesService" id="provincesService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.SeckillGoodsService" id="seckillGoodsService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.SeckillOrderService" id="seckillOrderService" />
+    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.UserService" id="userService" />
 </beans>

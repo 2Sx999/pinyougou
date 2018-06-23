@@ -25,4 +25,20 @@
     <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.TypeTemplateService" ref="typeTemplateServiceImpl" timeout="600000"/>
 
 
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.AddressService" ref="addressServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.AreasService" ref="areasServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.CitiesService" ref="citiesServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.ContentCategoryService" ref="contentCategoryServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.ContentService" ref="contentServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.FreightTemplateService" ref="freightTemplateServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.OrderItemService" ref="orderItemServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.OrderService" ref="orderServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.PayLogService" ref="payLogServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.ProvincesService" ref="provincesServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.SeckillGoodsService" ref="seckillGoodsServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.SeckillOrderService" ref="seckillOrderServiceImpl" timeout="600000"/>
+    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.UserService" ref="userServiceImpl" timeout="600000"/>
+
+
+
 </beans>
