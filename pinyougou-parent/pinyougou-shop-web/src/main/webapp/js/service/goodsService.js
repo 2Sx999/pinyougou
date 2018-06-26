@@ -28,7 +28,16 @@ app.service('goodsService', function ($http) {
     //搜索
     this.findWithConditionsByPagination = function (page, rows, searchEntity) {
         return $http.post('../goods/findWithConditionsByPagination.php?page=' + page + "&rows=" + rows, searchEntity);
+    };
+    this.uploadFile = function () {
+        var formData = new FormData();
+        formData.append("file", file.files[0]);
+        return $http({
+            method: 'POST',
+            url: "../goods/upload.php",
+            data: formData,
+            headers: {'Content-Type': undefined},
+            transformRequest: angular.identity
+        });
     }
-
-
 });

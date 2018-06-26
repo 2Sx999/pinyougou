@@ -118,4 +118,14 @@ public class ItemCatController {
         return itemCatService.findWithConditionsByPagination(itemCat, page, rows);
     }
 
+    /**
+     * 根据父id查找
+     *
+     * @date 2018/6/25 14:49
+     * @author porkchop
+     */
+    @RequestMapping("/findByParentId")
+    public List<TbItemCat> findByParentId(Long parentId) {
+        return itemCatService.findByParentId(parentId);
+    }
 }

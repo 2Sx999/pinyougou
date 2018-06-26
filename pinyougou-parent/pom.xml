@@ -267,7 +267,13 @@
                 <artifactId>xml-apis</artifactId>
                 <version>1.4.01</version>
             </dependency>
+            <dependency>
+                <groupId>com.luhuiguo</groupId>
+                <artifactId>fastdfs-client</artifactId>
+                <version>0.4.0</version>
+            </dependency>
         </dependencies>
+
 
     </dependencyManagement>
     <build>

@@ -6,6 +6,7 @@
              xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
     <context:component-scan base-package="cn.porkchop.pinyougou.shop.service"/>
     <!-- 以下页面不被拦截 -->
     <http pattern="/*.html" security="none"/>
@@ -19,7 +20,7 @@
     <http use-expressions="false">
         <intercept-url pattern="/**" access="ROLE_SELLER"/>
         <form-login login-page="/shoplogin.html" default-target-url="/admin/index.html"
-                    authentication-failure-url="/shoplogin.html" always-use-default-target="true"/>
+                    authentication-failure-url="/shoplogin.html"/>
         <csrf disabled="true"/>
         <headers>
             <frame-options policy="SAMEORIGIN"/>
@@ -40,4 +41,7 @@
     <dubbo:application name="pinyougou-manager-web"/>
     <dubbo:registry address="zookeeper://192.168.193.128:2181"/>
     <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.SellerService" id="sellerService"/>
+
+
+
 </beans:beans>
