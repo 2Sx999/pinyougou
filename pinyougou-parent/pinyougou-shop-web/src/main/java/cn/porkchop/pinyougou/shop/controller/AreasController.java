@@ -84,7 +84,7 @@ public class AreasController {
      * @param id
      * @return
      */
-    @RequestMapping("/findOne")
+    @RequestMapping("/findById")
     public TbAreas findById(Integer id) {
         return areasService.findById(id);
     }

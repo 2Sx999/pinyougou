@@ -37,7 +37,6 @@
     <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.ProvincesService" ref="provincesServiceImpl" timeout="600000"/>
     <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.SeckillGoodsService" ref="seckillGoodsServiceImpl" timeout="600000"/>
     <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.SeckillOrderService" ref="seckillOrderServiceImpl" timeout="600000"/>
-    <dubbo:service interface="cn.porkchop.pinyougou.sellergoods.service.UserService" ref="userServiceImpl" timeout="600000"/>
 
 
 

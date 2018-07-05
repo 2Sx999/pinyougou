@@ -85,7 +85,7 @@ public class CitiesController {
      * @param id
      * @return
      */
-    @RequestMapping("/findOne")
+    @RequestMapping("/findById")
     public TbCities findById(Integer id) {
         return citiesService.findById(id);
     }

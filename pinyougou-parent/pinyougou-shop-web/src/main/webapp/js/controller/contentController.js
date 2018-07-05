@@ -23,7 +23,7 @@ app.controller('contentController' ,function($scope,$controller   ,contentServic
 	};
 	
 	//查询实体 
-	$scope.findOne=function(id){				
+	$scope.findById=function(id){
 		contentService.findById(id).success(
 			function(response){
 				$scope.entity= response;					

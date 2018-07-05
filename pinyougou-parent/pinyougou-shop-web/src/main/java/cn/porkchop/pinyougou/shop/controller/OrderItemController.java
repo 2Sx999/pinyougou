@@ -85,7 +85,7 @@ public class OrderItemController {
      * @param id
      * @return
      */
-    @RequestMapping("/findOne")
+    @RequestMapping("/findById")
     public TbOrderItem findById(Long id) {
         return orderItemService.findById(id);
     }

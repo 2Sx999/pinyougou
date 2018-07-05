@@ -10,8 +10,8 @@ app.service('areasService',function($http){
 		return $http.get('../areas/findByPagination.php?page='+page+'&rows='+rows);
 	};
 	//查询实体
-	this.findOne=function(id){
-		return $http.get('../areas/findOne.php?id='+id);
+	this.findById=function(id){
+		return $http.get('../areas/findById.php?id='+id);
 	};
 	//增加 
 	this.add=function(entity){

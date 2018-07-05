@@ -44,5 +44,4 @@
     <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.ProvincesService" id="provincesService" />
     <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.SeckillGoodsService" id="seckillGoodsService" />
     <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.SeckillOrderService" id="seckillOrderService" />
-    <dubbo:reference interface="cn.porkchop.pinyougou.sellergoods.service.UserService" id="userService" />
 </beans>

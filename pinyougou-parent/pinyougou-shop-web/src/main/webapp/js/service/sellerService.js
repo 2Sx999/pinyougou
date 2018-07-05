@@ -28,6 +28,9 @@ app.service('sellerService', function ($http) {
     //搜索
     this.findWithConditionsByPagination = function (page, rows, searchEntity) {
         return $http.post('../seller/findWithConditionsByPagination.php?page=' + page + "&rows=" + rows, searchEntity);
-    }
-
+    };
+    //读取列表数据绑定到表单中
+    this.getUserName = function () {
+        return $http.get('../seller/getUserName.php');
+    };
 });

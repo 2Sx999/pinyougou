@@ -23,7 +23,7 @@ app.controller('areasController' ,function($scope,$controller   ,areasService){
 	};
 	
 	//查询实体 
-	$scope.findOne=function(id){				
+	$scope.findById=function(id){
 		areasService.findById(id).success(
 			function(response){
 				$scope.entity= response;					

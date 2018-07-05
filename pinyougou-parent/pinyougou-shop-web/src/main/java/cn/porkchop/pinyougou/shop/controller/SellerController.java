@@ -5,12 +5,15 @@ import cn.porkchop.pinyougou.pojo.Result;
 import cn.porkchop.pinyougou.pojo.TbSeller;
 import cn.porkchop.pinyougou.sellergoods.service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * controller
@@ -123,4 +126,11 @@ public class SellerController {
         return sellerService.findWithConditionsByPagination(seller, page, rows);
     }
 
+    @RequestMapping("/getUserName")
+    public Map<String, String> getUserName() {
+        String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("userName", name);
+        return map;
+    }
 }

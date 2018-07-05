@@ -23,7 +23,7 @@ app.controller('provincesController' ,function($scope,$controller   ,provincesSe
 	};
 	
 	//查询实体 
-	$scope.findOne=function(id){				
+	$scope.findById=function(id){
 		provincesService.findById(id).success(
 			function(response){
 				$scope.entity= response;					

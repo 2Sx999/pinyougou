@@ -77,7 +77,7 @@ public class SeckillOrderController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("/findOne")
+	@RequestMapping("/findById")
 	public TbSeckillOrder findById(Long id){
 		return seckillOrderService.findById(id);
 	}

@@ -84,7 +84,7 @@ public class AddressController {
      * @param id
      * @return
      */
-    @RequestMapping("/findOne")
+    @RequestMapping("/findById")
     public TbAddress findById(Long id) {
         return addressService.findById(id);
     }

@@ -85,7 +85,7 @@ public class FreightTemplateController {
      * @param id
      * @return
      */
-    @RequestMapping("/findOne")
+    @RequestMapping("/findById")
     public TbFreightTemplate findById(Long id) {
         return freightTemplateService.findById(id);
     }

@@ -10,8 +10,8 @@ app.service('seckillGoodsService',function($http){
 		return $http.get('../seckillGoods/findByPagination.php?page='+page+'&rows='+rows);
 	};
 	//查询实体
-	this.findOne=function(id){
-		return $http.get('../seckillGoods/findOne.php?id='+id);
+	this.findById=function(id){
+		return $http.get('../seckillGoods/findById.php?id='+id);
 	};
 	//增加 
 	this.add=function(entity){

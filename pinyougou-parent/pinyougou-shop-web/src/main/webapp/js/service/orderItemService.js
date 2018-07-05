@@ -10,8 +10,8 @@ app.service('orderItemService',function($http){
 		return $http.get('../orderItem/findByPagination.php?page='+page+'&rows='+rows);
 	};
 	//查询实体
-	this.findOne=function(id){
-		return $http.get('../orderItem/findOne.php?id='+id);
+	this.findById=function(id){
+		return $http.get('../orderItem/findById.php?id='+id);
 	};
 	//增加 
 	this.add=function(entity){

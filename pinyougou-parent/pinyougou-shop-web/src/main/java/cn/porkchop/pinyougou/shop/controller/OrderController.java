@@ -79,7 +79,7 @@ public class OrderController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("/findOne")
+	@RequestMapping("/findById")
 	public TbOrder findById(Long id){
 		return orderService.findById(id);
 	}

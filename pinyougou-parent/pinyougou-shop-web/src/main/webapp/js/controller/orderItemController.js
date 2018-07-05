@@ -23,7 +23,7 @@ app.controller('orderItemController' ,function($scope,$controller   ,orderItemSe
 	};
 	
 	//查询实体 
-	$scope.findOne=function(id){				
+	$scope.findById=function(id){
 		orderItemService.findById(id).success(
 			function(response){
 				$scope.entity= response;					

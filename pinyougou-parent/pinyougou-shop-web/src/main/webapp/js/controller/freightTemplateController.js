@@ -23,7 +23,7 @@ app.controller('freightTemplateController' ,function($scope,$controller   ,freig
 	};
 	
 	//查询实体 
-	$scope.findOne=function(id){				
+	$scope.findById=function(id){
 		freightTemplateService.findById(id).success(
 			function(response){
 				$scope.entity= response;					

@@ -85,7 +85,7 @@ public class ContentCategoryController {
      * @param id
      * @return
      */
-    @RequestMapping("/findOne")
+    @RequestMapping("/findById")
     public TbContentCategory findById(Long id) {
         return contentCategoryService.findById(id);
     }

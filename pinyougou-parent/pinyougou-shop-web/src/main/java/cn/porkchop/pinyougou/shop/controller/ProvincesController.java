@@ -85,7 +85,7 @@ public class ProvincesController {
      * @param id
      * @return
      */
-    @RequestMapping("/findOne")
+    @RequestMapping("/findById")
     public TbProvinces findById(Integer id) {
         return provincesService.findById(id);
     }

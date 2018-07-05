@@ -84,7 +84,7 @@ public class PayLogController {
      * @param id
      * @return
      */
-    @RequestMapping("/findOne")
+    @RequestMapping("/findById")
     public TbPayLog findById(String id) {
         return payLogService.findById(id);
     }

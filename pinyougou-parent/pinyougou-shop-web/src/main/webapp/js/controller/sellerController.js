@@ -76,6 +76,13 @@ app.controller('sellerController', function ($scope, $controller, sellerService)
     };
     $scope.searchEntity = {};//定义搜索对象
 
-
+    //获取登陆的用户名
+    $scope.getUserName = function () {
+        userService.getUserName().success(
+            function (response) {
+                $scope.userName = response.userName;
+            }
+        );
+    };
 
 });	

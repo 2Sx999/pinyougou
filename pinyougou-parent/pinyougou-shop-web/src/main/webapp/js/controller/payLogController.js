@@ -23,7 +23,7 @@ app.controller('payLogController' ,function($scope,$controller   ,payLogService)
 	};
 	
 	//查询实体 
-	$scope.findOne=function(id){				
+	$scope.findById=function(id){
 		payLogService.findById(id).success(
 			function(response){
 				$scope.entity= response;					
