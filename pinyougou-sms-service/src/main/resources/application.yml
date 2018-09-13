@@ -1,0 +1,10 @@
+server:
+  port: 9000
+spring:
+  activemq:
+    broker-url: tcp://blog.porkchop.cn:61616
+sms:
+  accessKeyId: LTAIvhVL1S21IFuq
+  accessKeySecret: ABzD9c2tzsD4cW7cyIejpC0PGh86zK
+  signName: porkchop
+  templateParam: SMS_138073135

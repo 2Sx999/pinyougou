@@ -9,13 +9,16 @@ user-service
 
 
 
+
 manager-web
     tomcat端口:8081
+    管理员账号密码: root root
 shop-web
     tomcat端口:8082
+    卖家密码加密方式:BCrypt
 user-web
     tomcat端口:8083
-
+    用户密码加密方式:md5
 
 
 sms-service短信微服务
